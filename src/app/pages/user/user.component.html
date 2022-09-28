@@ -1,0 +1,14 @@
+<div class="container">
+  <app-header></app-header>
+  <div class="d-flex justify-content-sm-around flex-wrap">
+    <div class="container__col">
+      <app-order-form [order]="orderItem" [state]="orderState"></app-order-form>
+    </div>
+    <div class="container__col">
+      <app-order-table
+        [orders]="orders"
+        (order)="onReceivedOrder($event)"
+      ></app-order-table>
+    </div>
+  </div>
+</div>

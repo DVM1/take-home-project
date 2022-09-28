@@ -1,0 +1,41 @@
+<table
+  mat-table
+  [dataSource]="dataSource"
+  class="mat-elevation-z8"
+  *ngIf="orders"
+>
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef>Item</th>
+    <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let element; let index = index">
+      <ng-container *ngIf="element.status === 'Pending'">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="btnAction(btnActionOne, index)"
+        >
+          {{ btnActionOne }}
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="btnAction(btnActionTwo, index)"
+        >
+          {{ btnActionTwo }}
+        </button>
+      </ng-container>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

@@ -1,0 +1,11 @@
+.container {
+	&__col  {
+		width: 600px;
+
+		&:first-child {
+			@media (max-width: 1399px) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}

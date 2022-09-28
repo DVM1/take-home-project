@@ -1,0 +1,9 @@
+.mat-table {
+    width: 100%;
+
+    .mat-column-actions {
+        button:last-child {
+            margin-left: 13px;
+        }
+    }
+}
